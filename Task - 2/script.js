@@ -40,6 +40,8 @@ console.log(myArray);
 let src = '" HElo Bakai" \n gjaeij';
 
 console.log(src);
+//" HElo Bakai" 
+ //gjaeij
 
 
 //012  length-длину  
