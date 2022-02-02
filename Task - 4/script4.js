@@ -22,8 +22,15 @@
 
 
 
-function greet(name){
+function greet(name = "unknown user"){ 
     console.log(`Hello ${name}`);
 }
-greet("Bakai");
+greet();
 //expected output : Hello Bakai
+//expected output : Hello unknown user
+
+
+let hi = (name) => console.log(`Hello ${name}`);
+hi("Asan");
+//expected output : RRRRR
+//expected output : Hello Asan
