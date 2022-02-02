@@ -64,3 +64,26 @@ do {
     b++;
 } while (b <= 10);
 // expected output : 0 1 2 3 4 5 6 7 8 9 10
+
+
+
+
+//forEach для  - каждого элемента массива
+const frienDS = ['Adilbek','Akai', 'Eken', 'Beknazar', 'Syimyk'];
+
+frienDS.forEach((element) => console.log(element));
+// expected output : Adilbek Akai Eken Beknazar Syimyk
+
+
+// frienDS.forEach(showfrenDS);
+// function showfrenDS(name){
+//     console.log(name);
+// }
+// expected output : Adilbek Akai Eken Beknazar Syimyk
+
+
+
+forEach();
+Map(); 
+filter();
+reduce();
