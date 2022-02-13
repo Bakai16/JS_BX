@@ -3,7 +3,7 @@
 
 // console.log(document.body);
 
-document.body;  //свойства body
+// document.body;  //свойства body
 
 const title =  document.createElement("h1");    //методы  создания элем 
 title.innerText = "HEllo Bakai";
