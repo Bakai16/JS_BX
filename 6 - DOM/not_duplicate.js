@@ -24,3 +24,6 @@ console.log(unicArr);
 let unicsArr = [...new Set(arr)];
 console.log(unicsArr);
 //expected output: [1, 2, 3, 6, 4]
+
+
+

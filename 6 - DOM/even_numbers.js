@@ -3,3 +3,4 @@ let result = arr.filter((number) => {
     return number %2 ===0;
 });
 console.log(result);
+//expected output: [2, 4, 6, 8]
