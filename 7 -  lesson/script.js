@@ -13,7 +13,7 @@ for (let a = 1; a < 9 ; a++){
 
 const wrapperChild = document.querySelectorAll(".wrapper > div");
 
-const box = document.querySelector(".box");
+const box = document.querySelector(".box"); 
 
 
 console.log(box.closest(".grand-wrapper"));
