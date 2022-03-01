@@ -1,4 +1,4 @@
-.box {
+/* .box {
     width: 300px;
     height: 300px;
     margin: 0 auto;
@@ -9,4 +9,22 @@
 *:focus{
     outline: none;
     border: 2px solid gray ;
+} */
+
+.container{
+    border: 3px solid yellow;
+    padding: 3em;
+}
+ul {
+    width: 20vw;
+    margin: 0 auto;
+    padding: 0;
+    border: 3px solid red;
+    list-style: none ;
+}
+li{
+    margin: 1.5em;
+    text-align: center;
+    border: 1px solid black;
+    padding: 10 0;
 }
