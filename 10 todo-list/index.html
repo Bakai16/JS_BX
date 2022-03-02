@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +8,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -17,10 +19,22 @@
 
                         <div class="row">
                             <form id="task-form">
-                                <input type="text" name="task" id="task">
-                                <label for="task">New task</label>
+                                <div class="input-field col s12">
+                                    <input type="text" name="task" id="task">
+                                    <label for="task">New task</label>
+                                </div>
+                                <button type="submit" class="btn">Add new Task</button>
                             </form>
                         </div>
+                    </div>
+                    <div class="card-action">
+                        <h4>Tasks</h4>
+                        <div class="input-field col s12">
+                            <input type="text" name="filter" id="filter">
+                            <label for="filter">Fil ter tasks</label>
+                        </div>
+                        <ul class="collection"> </ul>
+                        <button class="clear-tasks btn black">Clear Tasks</button>
                     </div>
                 </div>
             </div>
@@ -28,7 +42,8 @@
     </div>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="todo.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="todo.js"></script>
 </body>
+
 </html>
