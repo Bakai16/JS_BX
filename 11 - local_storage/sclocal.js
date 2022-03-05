@@ -1,3 +1,5 @@
 const num = 25;
 
-localStorage.getItem('num');
+//console.log(localStorage.getItem('num'));  
+
+localStorage.setItem('num', num.toString());
