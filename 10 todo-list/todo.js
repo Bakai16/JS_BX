@@ -7,6 +7,11 @@ const taskInput = document.querySelector("#task ");
 loadEventListeners();
 
 function loadEventListeners(){
+
+    document.addEventListener("DOMContentLoaded", getTasks);
+
+
+
     form.addEventListener("submit", addTask);
 
     task.addEventListener("click", removeTask);
