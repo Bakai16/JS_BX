@@ -20,6 +20,17 @@ function loadEventListeners(){
 
     filter.addEventListener("keyup", filterTasks);
 } 
+function getTasks (){
+    let tasks;
+    if (localStorage.getItem("tasks") === null){
+        tasks =[];
+    }else {
+        tasks = JSON.parse(localStorage.getItem("tasks"));
+    }
+}
+
+
+
 
 function filterTasks(e){
     const text = e.target.value.toLowerCase();
@@ -70,7 +81,25 @@ function addTask(e){
     li.appendChild(link);
 
     taskList.appendChild(li);
+
+    storeTaskInLocalStorage(taskInput.value);
+
     taskInput.value= "";
+
 
     e.preventDefault();
 }
+
+function storeTaskInLocalStorage(task){
+    let tasks;
+    if(localStorage.getItem("tasks") === null){
+        tasks = [];
+    }else{
+        tasks = JSON.parse(localStorage.getItem("tasks"));
+    }
+
+    tasks.push(tasks);
+
+    localStorage.setItem("tasks", JSON.stringify("tasks"));
+}
+
