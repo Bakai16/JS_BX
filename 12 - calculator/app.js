@@ -46,4 +46,10 @@ function showError(error){
     const cardBody = document.querySelector(".card-body");
     const heading = document.querySelector(".heading");
 
+    div.className = "alert alert-danger";
+    div.appendChild(document.createTextNode(error));
+
+    cardBody.insertBefore(div, heading);
+
+    setTimeout(clearError, 3000);
 }
