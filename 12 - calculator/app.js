@@ -29,9 +29,21 @@ function calculateResults(e){
         monthlyPayment.value = monthly.toFixed(2);
         totalPayment.value = (monthly * calculatedPayments).toFixed(2);
         totalInterest.value = (monthly * calculatedPayments - principal).toFixed(2);
+
+        document.querySelector("#output").style.display = "block";
+        document.querySelector("#loader").style.display = "none";
+
     }else{
         showError("Заполните все поля!");
     }
+}
+function showError(error){
+    document.querySelector("#output").style.display = "none";
+    document.querySelector("#loader").style.display = "none";
 
-    e.preventDefault();
+    const div = document.createElement("div");
+
+    const cardBody = document.querySelector(".card-body");
+    const heading = document.querySelector(".heading");
+
 }
