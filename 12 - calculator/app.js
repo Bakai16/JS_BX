@@ -53,3 +53,7 @@ function showError(error){
 
     setTimeout(clearError, 3000);
 }
+
+function clearError(){
+    document.querySelector(".alert").remove();
+}
