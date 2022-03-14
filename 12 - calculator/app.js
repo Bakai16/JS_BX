@@ -36,6 +36,7 @@ function calculateResults(e){
     }else{
         showError("Заполните все поля!");
     }
+    e.preventDefault();
 }
 function showError(error){
     document.querySelector("#output").style.display = "none";
