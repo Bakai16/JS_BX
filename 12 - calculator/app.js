@@ -1,6 +1,13 @@
 const form = document.querySelector("#loan-form");
 
-form.addEventListener("submit", calculateResults);
+form.addEventListener("submit", function (e){
+    document.querySelector("#output").style.display = "none";
+    documetn.querySelector("#loader").style.display = "block";
+ 
+    setTimeout(calculateResults, 2000);
+
+    e.preventDefault();
+});
 
 function calculateResults(e){
     const amount = document.querySelector("#amount");
@@ -23,7 +30,7 @@ function calculateResults(e){
         totalPayment.value = (monthly * calculatedPayments).toFixed(2);
         totalInterest.value = (monthly * calculatedPayments - principal).toFixed(2);
     }else{
-        alert("Заполните все поля!");
+        showError("Заполните все поля!");
     }
 
     e.preventDefault();
