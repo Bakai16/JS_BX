@@ -8,8 +8,27 @@ class Person {
     greet(){
         return (`Hello ${this.firstName} ${this.lastName}`);
     }
-
-
 }
-const Bakai = new Person ("Bakai", "Kazimirov");
-console.log(Bakai);
+class Client extends Person {
+    constructor(firstName, lastName, email, city)
+    {
+        super(firstName, lastName);
+        this.email = email;
+        this.city = city;
+    }
+
+    // greet()
+    // {
+    //     return super.greet() + " I'm from " + this.city;
+    // }
+    greet(){
+        return `${this.firstName} Email: ${this.email}`;
+    }
+}
+
+const Bakai = new Person("Bakai", "Akylbekov");
+console.log(Bakai.greet());
+
+const mary = new Client("Mary", "Mon", "mary@gmail.com", "New Your");
+console.log(mary.greet());
+    
