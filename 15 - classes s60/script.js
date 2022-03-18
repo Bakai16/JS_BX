@@ -49,9 +49,22 @@ class Restaurant{
     }
 
     isOpen() {
-      let currentHour = new Date();
-        console.log(currentHour);
+      let currentHour = new Date().getHours();
+      let currentDay = new Date().getDay();
+        console.log(currentDay);
+    
+    if(currentDay === 6  || currentDay === 0){
+        return `${this.name} is closed`;
+    }else{
+        if(currentHour > 9 &&  currentHour < 22){
+        return `${this.name} is open`;
+    }else {
+        return `${this.name} is closed`;
     }
+    }
+
+    
+}
 }
 
 const bayKazan = new Restaurant ( "BayKazan", "Kyrgyz");
