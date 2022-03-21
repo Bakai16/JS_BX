@@ -73,4 +73,33 @@ const Vasya = new Restaurant ( "Vasya", "Russian");
 console.log(bayKazan.isOpen());
 // console.log(Vasya.showInfo());
 
+
+class cars {
+    constructor(model, year, color, engine){
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.engine = engine;
+    }
+    
+    showInfo(){
+        return (`Model: ${this.model}. Year: ${this.year}. Color: ${this.color}. Engine type: ${this.engine}`);
+    }
+}
  
+class ElectroCars extends cars {
+    constructor(model, year, color, engine, batery){
+        super(model, year, color, engine);
+        this.batery = batery;
+    }
+    Promate(){
+        return(`We have best electrocars ever! follow we and enjoy!`);
+    }
+}
+
+const Tesla = new cars("Tesla", "2022", "white", "diesel");
+const Camry = new ElectroCars("Camry", 2020, "black", "electro");
+
+console.log(Tesla.showInfo());
+console.log(Camry.showInfo());
+console.log(Camry.Promate());
