@@ -23,6 +23,7 @@ function Book(title, author, isbn) {
   list.appendChild(row);
  };
 
+
 // Show Alert
  UI.prototype.showAlert = function (msg, className) {
    const div = document.createElement("div");
@@ -46,6 +47,8 @@ function Book(title, author, isbn) {
      target.parentElement.parentElement.remove();
    }
  };
+
+
 // Clear fields
   UI.prototype.clearFields = function () {
    document.getElementById("title").value = "";
@@ -75,3 +78,12 @@ document.getElementById("book-form").addEventListener("submit", (e) => {
           e.preventDefault(); 
 });
 
+
+//Event Listener for deleting book
+document.getElementById("book-list").addEventListener("click", (e) =>{
+  const ui = new UI ();
+  ui.deleteBook(e.target);
+  ui.showAlert("book deleted!", "success");
+
+  e.preventDefault();
+});
