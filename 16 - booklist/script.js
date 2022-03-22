@@ -22,8 +22,7 @@ function Book(title, author, isbn) {
 
   list.appendChild(row);
  };
-
-
+  
 // Show Alert
  UI.prototype.showAlert = function (msg, className) {
    const div = document.createElement("div");
