@@ -51,7 +51,7 @@ game.addEventListener("mousedown", function (e){
 
 function gameOver(won, msg){
     let color;
-    won === true ? (color = "green") : (color = 'red');
+    won === true ? (color = "green") : (color = "red");
 
     guessInput.disabled = true;
     guessInput.style.border = `1px solid ${color}`;

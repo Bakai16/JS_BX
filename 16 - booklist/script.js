@@ -23,6 +23,6 @@ document.getElementByID("book-form").addEventListener("submit", (e) => {
     //Instance of book
     //Instance of UI
     //Add book to list
-    //clear fields
+    //clear fieldsп
 });
 
