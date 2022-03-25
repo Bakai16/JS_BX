@@ -1,69 +1,56 @@
+const productsInner = document.querySelector(".products__inner");
+const productsFilters = document.querySelector(".products__filters");
+fetch("product.json")  // FETCH API
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    data.forEach((e) => {
+      let productsItem = document.createElement("article");
+      productsItem.classList = `products__item  ${e.category}`;
 
-   
-function products() {
-    fetch("product.json")
-        .then((res) => {
-            return res.json();
-        }).then((product) => {
-            product.forEach(element => {
-                const productsInner = document.querySelector(".products__inner");
-                const info = document.createElement("div");
-                const divImg = document.createElement("div");
-                const photo = document.createElement("img");
-                const div1 = document.createElement("div");
-                const h2 = document.createElement("h2");
-                const h3 = document.createElement("h3");
-                const text = document.createElement("div");
-                const p = document.createElement("p");
+      let img = document.createElement("img");
+      img.className = "products__item-photo";
 
-                productsInner.style.display = "flex";
-                productsInner.style.flexWrap = "wrap";
-                productsInner.appendChild(info);
+      let productsItemInfo = document.createElement("div");
+      productsItemInfo.className = "products__item-info";
 
-                info.className = ("container");
-                info.style.width = "350px";
-                info.style.display = "flex";
-                info.style.flexDirection = "column";
-                info.style.backgroundColor = "fff";
-                info.style.border = "5px solid #dce0e1";
-                info.style.margin = "50px auto";
-                info.style.backgroundColor = "white";
-                info.style.textAlign = "center";
-                info.style.borderRadius = "5px";
-                info.style.padding = "1em";
+      let header = document.createElement("header");
 
-                info.appendChild(divImg);
+      let h3 = document.createElement("h3");
 
-                photo.style.width = "200px";
-                photo.style.height = "250px";
-                photo.style.objectFit = "contain";
-                divImg.appendChild(photo);
+      let productsItemPrice = document.createElement("span");
+      productsItemPrice.className = "products__item-price";
 
-                div1.className = ("div-1");
-                div1.style.height = "60px";
-                div1.style.display = "flex";
-                div1.style.borderBottom = "3px solid rgb(0, 0, 0)";
-                div1.style.justifyContent = "space-between";
-                div1.style.alignItems = "center";
-                divImg.appendChild(div1);
+      let productsItemText = document.createElement("p");
+      productsItemText.className = "products__item-text";
 
-                h2.style.fontSize = "15px";
-                h2.style.textAlign = "left"
-                div1.appendChild(h2);
+      productsInner.appendChild(productsItem);
+      productsItem.appendChild(img);
+      productsItem.appendChild(productsItemInfo);
+      productsItemInfo.appendChild(header);
+      productsItemInfo.appendChild(productsItemText);
+      header.appendChild(h3);
+      header.appendChild(productsItemPrice);
 
-                h3.style.fontSize = "15px";
-                div1.appendChild(h3);
+      img.src = e.img;
+      h3.innerHTML = e.title;
+      productsItemPrice.textContent = e.price + "сом";
+      productsItemText.innerHTML = e.desc;
 
-                info.appendChild(text);
-
-                text.appendChild(p);
-
-                photo.src = element.img;
-                h2.textContent = element.title;
-                h3.textContent = element.price;
-                p.textContent = element.desc;
-                
-            });
+      const filterCard = document.querySelectorAll(".products__item");
+      productsFilters.addEventListener("click", (event) => {
+        if (event.target.tagName !== "BUTTON") return false;
+        let filterClass = event.target.dataset["filter"];
+        filterCard.forEach((e) => {
+          e.classList.remove("hide");
+          if (!e.classList.contains(filterClass) && filterClass !== "all") {
+            e.classList.add("hide");
+          }
         });
-}
-products();
+      });
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
