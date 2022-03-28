@@ -1,0 +1,29 @@
+.container{
+    margin-top: 100px;
+    text-align: center;
+}
+.post{
+    text-decoration: none;
+    text-align: center;
+    margin-left: 100px;
+}
+li{
+    list-style: none;
+    display: inline-block;
+}
+.card{
+    max-width: 300px;
+    min-height: 300px;
+    padding: 15px;
+    margin: 20px;
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+.title{
+    font-size: 20px;
+    font-weight: bold;
+}
+.content{
+    font-size: 15px;
+    border-top: 2px solid black;
+}
