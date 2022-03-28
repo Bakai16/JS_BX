@@ -1,0 +1,1 @@
+<h3>https://bakai16.github.io/JS_BX/22%20-%20fetch%20API%20practice/index.html</h3>
