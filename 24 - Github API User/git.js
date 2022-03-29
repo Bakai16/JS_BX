@@ -1,29 +1,28 @@
 "https://api.github.com/users/${user}?client_id=${this.client_id}&client_secret=${this.client_secret}";
 
 class Github {
-    constructor() {
-        this.client_id = "dd17b25e7ebb42dc40c5 ";
-        this.client_secret = "cf397bc9a91d1a4bd75ed86d91b9ae18819b4230";
-        this.repos_count = 10;
-        this.repos_sort = "created: asc";
-    }
+  constructor() {
+    this.client_id = "418ed22424aed99aee51";
+    this.client_secret = "d1fb881657bb88ff7132e1581058d8e869cb8315";
+    this.repos_count = 10;
+    this.repos_sort = "created: asc";
+  }
 
+  async getUser(user) {
+    const profileResponse = await fetch(
+      `https://api.github.com/users/${user}?client_id=${this.client_id}&client_secret=${this.client_secret}`
+    );
 
-    async getUser(user) {
-        const profileResponse = await fetch(
-          `https://api.github.com/users/${user}?client_id=${this.client_id}&client_secret=${this.client_secret}`
-        );
-    
-        const repoResponse = await fetch(
-          `https://api.github.com/users/${user}/repos?per_page=${this.repos_count}&sort=${this.repos_sort}?client_id=${this.client_id}&client_secret=${this.client_secret}`
-        );
-    
-        const profile = await profileResponse.json();
-        const repos = await repoResponse.json();
-    
-        return {
-          profile,
-          repos,
-        };
-      }
-    }
+    const repoResponse = await fetch(
+      `https://api.github.com/users/${user}/repos?per_page=${this.repos_count}&sort=${this.repos_sort}?client_id=${this.client_id}&client_secret=${this.client_secret}`
+    );
+
+    const profile = await profileResponse.json();
+    const repos = await repoResponse.json();
+
+    return {
+      profile,
+      repos,
+    };
+  }
+}
