@@ -27,4 +27,5 @@ li{
     text-align: center;
     border: 1px solid black;
     padding: 10 0;
+    grid-area: sidebar;
 }
